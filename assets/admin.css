@@ -1,0 +1,75 @@
+.csa-wrap { --csa-border: #dcdcde; --csa-muted: #646970; --csa-accent: #2271b1; --csa-bg: #fff; --csa-soft: #f6f7f7; --csa-ins: #e6f4ea; --csa-del: #fce8e6; margin-right: 20px; }
+.csa-title { display: flex; align-items: baseline; gap: 10px; }
+.csa-model { font-size: 12px; color: var(--csa-muted); font-weight: 400; }
+.csa-app { display: grid; grid-template-columns: 260px 1fr; gap: 16px; height: calc(100vh - 140px); min-height: 520px; }
+.csa-side { display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+.csa-new { width: 100%; justify-content: center; }
+.csa-tabs { display: flex; border-bottom: 1px solid var(--csa-border); }
+.csa-tab { flex: 1; background: none; border: 0; border-bottom: 2px solid transparent; padding: 8px 4px; cursor: pointer; color: var(--csa-muted); }
+.csa-tab.is-active { border-bottom-color: var(--csa-accent); color: #1d2327; font-weight: 600; }
+.csa-sessions { margin: 0; overflow: auto; flex: 1; }
+.csa-sessions li { display: flex; align-items: center; margin: 0; border-radius: 4px; }
+.csa-sessions li.is-active, .csa-sessions li:hover { background: #e9eff5; }
+.csa-session { flex: 1; text-align: left; background: none; border: 0; padding: 8px; cursor: pointer; display: flex; gap: 6px; align-items: center; min-width: 0; }
+.csa-session-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.csa-del { background: none; border: 0; color: var(--csa-muted); cursor: pointer; padding: 4px 8px; visibility: hidden; }
+.csa-sessions li:hover .csa-del, .csa-sessions li.confirm .csa-del { visibility: visible; }
+.csa-sessions li.confirm .csa-del { color: #b32d2e; }
+.csa-main { display: flex; flex-direction: column; background: var(--csa-bg); border: 1px solid var(--csa-border); border-radius: 6px; min-height: 0; overflow: hidden; }
+#csa-history-view { padding: 16px; overflow: auto; display: block; }
+#csa-history-view[hidden], #csa-chat-view[hidden] { display: none; }
+.csa-history-head { display: flex; justify-content: space-between; align-items: center; }
+.csa-undone td { color: var(--csa-muted); text-decoration: line-through; }
+.csa-undone td:last-child, .csa-undone td:nth-child(5) { text-decoration: none; }
+.csa-transcript { flex: 1; overflow: auto; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+.csa-empty { color: #3c434a; max-width: 640px; }
+.csa-empty h2 { margin-top: 0; }
+.csa-msg { max-width: 82%; padding: 10px 14px; border-radius: 10px; line-height: 1.55; overflow-wrap: anywhere; }
+.csa-user { align-self: flex-end; background: var(--csa-accent); color: #fff; white-space: pre-wrap; }
+.csa-assistant { align-self: flex-start; background: var(--csa-soft); }
+.csa-assistant p { margin: 0 0 .6em; } .csa-assistant p:last-child { margin-bottom: 0; }
+.csa-assistant pre { background: #1d2327; color: #f0f0f1; padding: 10px; border-radius: 4px; overflow: auto; }
+.csa-assistant h4 { margin: .8em 0 .3em; }
+.csa-tool { align-self: flex-start; font-size: 12px; color: var(--csa-muted); max-width: 82%; }
+.csa-tool summary { cursor: pointer; display: flex; align-items: center; gap: 6px; }
+.csa-tool-dot { width: 8px; height: 8px; border-radius: 50%; background: #00a32a; display: inline-block; }
+.csa-tool-error .csa-tool-dot { background: #d63638; }
+.csa-tool-pending .csa-tool-dot { background: #dba617; }
+.csa-tool-body pre { white-space: pre-wrap; max-height: 240px; overflow: auto; background: var(--csa-soft); padding: 8px; border-radius: 4px; margin: 4px 0 8px; }
+.csa-tool-label { font-weight: 600; margin-top: 6px; }
+.csa-pending { padding: 0 20px; max-height: 55%; overflow: auto; }
+.csa-pending:empty { display: none; }
+.csa-pending h3 { margin: 12px 0 8px; }
+.csa-card { border: 1px solid var(--csa-border); border-left: 4px solid var(--csa-accent); border-radius: 4px; margin-bottom: 12px; background: #fff; }
+.csa-risk-publish, .csa-risk-bulk, .csa-risk-code, .csa-risk-settings { border-left-color: #dba617; }
+.csa-risk-destructive { border-left-color: #d63638; }
+.csa-card header { display: flex; gap: 8px; align-items: center; padding: 10px 12px; border-bottom: 1px solid var(--csa-border); flex-wrap: wrap; }
+.csa-card .csa-view { margin-left: auto; }
+.csa-card > .description { padding: 0 12px; }
+.csa-badge { font-size: 11px; background: #f0f0f1; border-radius: 10px; padding: 2px 8px; color: #3c434a; white-space: nowrap; }
+.csa-changes { padding: 6px 12px; }
+.csa-change summary { cursor: pointer; padding: 4px 0; font-weight: 500; }
+.csa-diff { white-space: pre-wrap; word-break: break-word; font-size: 12px; max-height: 320px; overflow: auto; background: var(--csa-soft); padding: 8px; border-radius: 4px; margin: 4px 0 8px; }
+.csa-diff ins { background: var(--csa-ins); text-decoration: none; }
+.csa-diff del { background: var(--csa-del); }
+.csa-card footer { display: flex; gap: 8px; padding: 10px 12px; border-top: 1px solid var(--csa-border); align-items: center; }
+.csa-note { flex: 1; min-width: 120px; }
+.csa-all-actions { display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 12px; }
+.csa-status { padding: 6px 20px; min-height: 20px; color: var(--csa-muted); display: flex; gap: 10px; align-items: center; }
+.csa-tokens { margin-left: auto; font-size: 11px; }
+.csa-warn { color: #b32d2e; }
+.csa-spinner { width: 14px; height: 14px; border: 2px solid #c3c4c7; border-top-color: var(--csa-accent); border-radius: 50%; animation: csa-spin .8s linear infinite; display: inline-block; }
+@keyframes csa-spin { to { transform: rotate(360deg); } }
+.csa-composer { border-top: 1px solid var(--csa-border); padding: 12px 20px; }
+.csa-composer textarea { width: 100%; resize: vertical; }
+.csa-composer-actions { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+.csa-hint { color: var(--csa-muted); font-size: 12px; margin-right: auto; }
+.csa-settings .csa-matrix-wrap { overflow-x: auto; }
+.csa-settings .csa-matrix td, .csa-settings .csa-matrix th { vertical-align: top; }
+.csa-settings .csa-matrix td:not(:first-child), .csa-settings .csa-matrix th:not(:first-child) { text-align: center; }
+@media (max-width: 782px) {
+	.csa-app { grid-template-columns: 1fr; height: auto; }
+	.csa-main { min-height: 70vh; }
+	.csa-msg, .csa-tool { max-width: 100%; }
+	.csa-hint { display: none; }
+}
